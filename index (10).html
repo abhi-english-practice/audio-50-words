@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silicon Valley C1 POP Dossier</title>
+<style>
+body{font-family:Arial;background:#f7f2ff;padding:20px}
+.box{background:white;border-radius:24px;padding:25px;margin:20px auto;max-width:900px;box-shadow:0 8px 20px #0002}
+button{background:#6c5ce7;color:white;border:0;border-radius:18px;padding:12px 18px}
+#answers{display:none;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:15px}
+.word{background:#eef5ff;padding:12px;border-radius:14px}
+</style>
+</head>
+<body>
+<div class="box"><h1>C1 Vocabulary Booster – Silicon Valley</h1></div>
+
+<div class="box">
+<h2>🎧 Module 1 – Audio Lab</h2>
+<p>Audio Part 1: Vocabulary 1–25</p>
+<audio controls src="audio_part_1.mp3"></audio>
+<p>Audio Part 2: Vocabulary 26–50</p>
+<audio controls src="audio_part_2.mp3"></audio>
+</div>
+
+<div class="box">
+<h2>📦 Answer Box – 50 Vocabulary Items</h2>
+<p>Click to reveal the complete list before flashcard practice.</p>
+<button onclick="document.getElementById('answers').style.display='grid'">Show Answer Box</button>
+<div id="answers"><div class='word'>1. Technological advancement</div><div class='word'>2. Innovation</div><div class='word'>3. Economic prosperity</div><div class='word'>4. Entrepreneurial ambition</div><div class='word'>5. Digital transformation</div><div class='word'>6. Superficial layer</div><div class='word'>7. Complex historical narrative</div><div class='word'>8. Ecological processes</div><div class='word'>9. Agricultural traditions</div><div class='word'>10. Collective memories</div><div class='word'>11. Technological progress</div><div class='word'>12. Digital systems</div><div class='word'>13. Technological prosperity</div><div class='word'>14. Corporate innovation</div><div class='word'>15. Historical significance</div><div class='word'>16. Suburban environments</div><div class='word'>17. Functional aspects</div><div class='word'>18. Historical foundations</div><div class='word'>19. Contemporary landscapes</div><div class='word'>20. Ecological systems</div><div class='word'>21. Agricultural landscapes</div><div class='word'>22. Technological dominance</div><div class='word'>23. Material foundations</div><div class='word'>24. Physical infrastructure</div><div class='word'>25. Natural resources</div><div class='word'>26. Historical narrative</div><div class='word'>27. Historical significance</div><div class='word'>28. Historical dimensions</div><div class='word'>29. Cultural histories</div><div class='word'>30. Accumulated experiences</div><div class='word'>31. Indigenous communities</div><div class='word'>32. Environmental responsibility</div><div class='word'>33. Resource extraction</div><div class='word'>34. Ownership</div><div class='word'>35. Social activities</div><div class='word'>36. Collective memories</div><div class='word'>37. Inherited knowledge</div><div class='word'>38. Geographical names</div><div class='word'>39. Historical traces</div><div class='word'>40. Identity</div><div class='word'>41. Relationships</div><div class='word'>42. Human civilisation</div><div class='word'>43. Previous communities</div><div class='word'>44. Long-standing relationships</div><div class='word'>45. Cultural connections</div><div class='word'>46. Meaningful knowledge</div><div class='word'>47. Direct experience</div><div class='word'>48. Sustained observation</div><div class='word'>49. Curiosity</div><div class='word'>50. Perception</div></div>
+</div>
+
+<div class="box">
+<h2>🃏 Module 2 – Flashcard Review</h2>
+<div id="card" style="background:white;border-radius:24px;height:220px;padding:30px;text-align:center"></div>
+<button onclick="prev()">Previous</button>
+<button onclick="next()">Next</button>
+<p id="count"></p>
+</div>
+
+<script>
+const words = ["Technological advancement", "Innovation", "Economic prosperity", "Entrepreneurial ambition", "Digital transformation", "Superficial layer", "Complex historical narrative", "Ecological processes", "Agricultural traditions", "Collective memories", "Technological progress", "Digital systems", "Technological prosperity", "Corporate innovation", "Historical significance", "Suburban environments", "Functional aspects", "Historical foundations", "Contemporary landscapes", "Ecological systems", "Agricultural landscapes", "Technological dominance", "Material foundations", "Physical infrastructure", "Natural resources", "Historical narrative", "Historical significance", "Historical dimensions", "Cultural histories", "Accumulated experiences", "Indigenous communities", "Environmental responsibility", "Resource extraction", "Ownership", "Social activities", "Collective memories", "Inherited knowledge", "Geographical names", "Historical traces", "Identity", "Relationships", "Human civilisation", "Previous communities", "Long-standing relationships", "Cultural connections", "Meaningful knowledge", "Direct experience", "Sustained observation", "Curiosity", "Perception"];
+let index = 0;
+function render(){
+ document.getElementById('card').innerHTML='<h2>'+words[index]+'</h2><p>Click to review details</p>';
+ document.getElementById('count').innerHTML=(index+1)+' / 50';
+}
+function next(){index=(index+1)%50;render();}
+function prev(){index=(index+49)%50;render();}
+render();
+</script>
+</body>
+</html>
